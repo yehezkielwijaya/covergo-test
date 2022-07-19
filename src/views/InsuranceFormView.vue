@@ -11,7 +11,7 @@ const { getCurrency, getPricing, getSSafeAdd, getSafeAdd} = ins;
   <main>
     <div>Insurance Form</div>
 
-    <form @submit.prevent="">
+    <form @submit.prevent="checkAge">
       <label class="label-elem">
         <div>Name</div>
         <input class="input-text" type="text" v-model="name" placeholder="your name" />
@@ -19,7 +19,7 @@ const { getCurrency, getPricing, getSSafeAdd, getSafeAdd} = ins;
       <label class="label-elem">
         <div>Age</div>
         <input type="text" class="input-text" v-model.number="age" placeholder="your age" />
-        <small>Input your age, max 100</small>
+        <small id="age-helper">{{helperMsg}}</small>
       </label>
       <label class="label-elem">
         <div>Where do you live</div>
@@ -48,6 +48,7 @@ const { getCurrency, getPricing, getSSafeAdd, getSafeAdd} = ins;
       <div>
         your premium is: {{ getPricing(age, location, pack) + ' ' + getCurrency(location) }}
       </div>
+     <input type="submit" value="Check Price">
     </form>
 
     <nav class="space-x-2">
@@ -56,6 +57,23 @@ const { getCurrency, getPricing, getSSafeAdd, getSafeAdd} = ins;
     </nav>
   </main>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      helperMsg: 'Input your age, max 100'
+    }
+  },
+  methods: {
+    checkAge() {
+      if( this.age >100) {
+        this.helperMsg = 'Invalid age, max 100'
+      }
+    }
+  }
+}
+</script>
 
 <style lang="postcss" scoped>
 h1 {
