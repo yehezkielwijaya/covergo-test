@@ -1,6 +1,7 @@
 <template>
   <div class="about">
     <h1>This is an about page</h1>
+    <div class="text-3xl text-red-500"> tailwind run!</div>
   </div>
 </template>
 
