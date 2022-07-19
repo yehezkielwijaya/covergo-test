@@ -6,5 +6,8 @@ import { RouterLink, RouterView } from "vue-router";
   <RouterView />
 </template>
 
-<style scoped>
+<style lang="postcss">
+#app {
+  @apply p-4
+}
 </style>
