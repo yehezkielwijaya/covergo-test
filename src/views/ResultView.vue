@@ -4,7 +4,7 @@ import { useInsuranceStore } from "../stores/insurance";
 
 const ins = useInsuranceStore();
 const { name, age, location, pack, premium, currency } = storeToRefs(ins);
-const { getCurrency, getPricing, getSSafeAdd, getSafeAdd } = ins;
+const { resetData } = ins;
 </script>
 
 <template>
@@ -12,12 +12,16 @@ const { getCurrency, getPricing, getSSafeAdd, getSafeAdd } = ins;
     <section class="left-section">
       <img src="../assets/front_page_diagram.svg" class="home-image" />
       <h3 class="main-title">The ultimate insurance wizard</h3>
-      <h5 class="main-subtitle">Streamline your insurance ecosystem from end to end at record speed with CoverGo's fully configurable API driven insurance in a box platform.</h5>
+      <h5 class="main-subtitle">
+        Streamline your insurance ecosystem from end to end at record speed with
+        CoverGo's fully configurable API driven insurance in a box platform.
+      </h5>
     </section>
     <section class="right-section">
+      <h1 class="section-title">Insurance Package Summary</h1>
+
       <div class="result-wrapper">
-        <div class="title">Insurance Package Summary</div>
-        <div class="my-4 space-y-4 text-center">
+        <div class="my-4 space-y-4 text-xl text-center">
           <div>{{ pack }} Package</div>
 
           <div>Mr. {{ name }}</div>
@@ -44,7 +48,7 @@ const { getCurrency, getPricing, getSSafeAdd, getSafeAdd } = ins;
 
       <nav class="navigations">
         <router-link to="/form">Back</router-link>
-        <router-link to="/" class="primary">Finish</router-link>
+        <router-link to="/" class="primary" @click="ins.$reset()">Buy</router-link>
       </nav>
     </section>
   </main>
@@ -60,7 +64,7 @@ const { getCurrency, getPricing, getSSafeAdd, getSafeAdd } = ins;
 }
 .premium-wrapper {
   @apply flex flex-col items-center w-full py-4 px-8 rounded-2xl text-white;
-  background: #1D479B;
+  background: #1d479b;
 }
 
 .premium-score {

@@ -12,7 +12,7 @@ import { RouterLink, RouterView } from "vue-router";
 }
 
 main {
-  @apply flex space-x-1 border overflow-hidden rounded-xl h-full w-full max-w-screen-xl;
+  @apply flex space-x-1 border overflow-hidden rounded-xl h-full w-full max-w-screen-xl shadow-lg;
 }
 
 section.left-section {
@@ -35,12 +35,16 @@ section.left-section {
 }
 
 section.right-section {
-  @apply w-full p-8 flex flex-col justify-between bg-transparent;
+  @apply w-full py-4 px-8 flex flex-col justify-start bg-transparent;
   min-width: 50%;
 }
 
+section.right-section h1.section-title{
+  @apply text-[#1D479B] font-bold text-4xl mb-4;
+}
+
 nav.navigations {
-  @apply flex justify-end space-x-2 mt-8;
+  @apply flex justify-end space-x-2 mt-auto;
 }
 
 nav.navigations a {

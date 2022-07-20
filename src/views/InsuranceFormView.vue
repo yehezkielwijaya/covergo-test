@@ -12,12 +12,15 @@ const { getCurrency, getPricing, getSSafeAdd, getSafeAdd } = ins;
     <section class="left-section">
       <img src="../assets/front_page_diagram.svg" class="home-image" />
       <h3 class="main-title">The ultimate insurance wizard</h3>
-      <h5 class="main-subtitle">Streamline your insurance ecosystem from end to end at record speed with CoverGo's fully configurable API driven insurance in a box platform.</h5>
+      <h5 class="main-subtitle">
+        Streamline your insurance ecosystem from end to end at record speed with
+        CoverGo's fully configurable API driven insurance in a box platform.
+      </h5>
     </section>
     <section class="right-section">
-      <div>Insurance Form</div>
+      <h1 class="section-title">Insurance Form</h1>
       <div>
-        <form @submit.prevent="checkAge">
+        <form>
           <label class="label-elem">
             <div>Name</div>
             <input
@@ -132,7 +135,7 @@ export default {
 
 <style lang="postcss" scoped>
 .label-elem {
-  @apply flex flex-col mb-4 relative;
+  @apply flex flex-col mb-2 relative;
 }
 
 .label-elem .input-wrapper {
@@ -147,7 +150,8 @@ export default {
   content: "!";
   position: absolute;
   right: 8px;
-  top: 12px;
+  top: calc(50% - 21px);
+  line-height: 20px;
   @apply w-5 h-5 bg-red-500 rounded-full text-center font-bold text-white;
 }
 
@@ -180,8 +184,8 @@ label div {
 }
 
 .premium-wrapper {
-  @apply flex flex-col items-center w-full py-4 px-8 rounded-2xl text-white;
-  background: #1D479B;
+  @apply flex flex-col items-center w-full py-3 px-8 mt-4 rounded-2xl text-white;
+  background: #1d479b;
 }
 
 .premium-score {

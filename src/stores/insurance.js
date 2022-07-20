@@ -10,10 +10,9 @@ export const useInsuranceStore = defineStore({
     premium: 0,
     currency: "HKD",
     safeAdd: 0,
-    supSafeAdd: 0,
+    supSafeAdd: 0
   }),
-  getters: {
-  },
+  getters: {},
   actions: {
     getPricing(age, location, packType) {
       if (packType === "Standard") {
@@ -45,5 +44,15 @@ export const useInsuranceStore = defineStore({
       }
       return this.currency;
     },
-  },
+    resetData() {
+      this.name = "";
+      this.age = 0;
+      this.location = 0;
+      this.pack = "Standart";
+      this.premium = 0;
+      this.currency = "HKD";
+      this.safeAdd = 0;
+      this.supSafeAdd = 0;
+    }
+  }
 });
