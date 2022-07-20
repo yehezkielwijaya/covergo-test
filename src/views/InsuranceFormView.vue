@@ -9,85 +9,96 @@ const { getCurrency, getPricing, getSSafeAdd, getSafeAdd } = ins;
 
 <template>
   <main>
-    <div>Insurance Form</div>
-    <div>
-      <form @submit.prevent="checkAge">
-        <label class="label-elem">
-          <div>Name</div>
-          <input
-            class="input-text"
-            type="text"
-            v-model="name"
-            placeholder="your name"
-          />
-        </label>
-        <label :class="[err !== 0 ? 'error' : '']" class="label-elem">
-          <div>Age</div>
-          <div class="input-wrapper">
+    <section class="left-section">
+      <img src="../assets/front_page_diagram.svg" class="home-image" />
+      <h3 class="main-title">The ultimate insurance wizard</h3>
+      <h5 class="main-subtitle">Streamline your insurance ecosystem from end to end at record speed with CoverGo's fully configurable API driven insurance in a box platform.</h5>
+    </section>
+    <section class="right-section">
+      <div>Insurance Form</div>
+      <div>
+        <form @submit.prevent="checkAge">
+          <label class="label-elem">
+            <div>Name</div>
             <input
-              type="text"
               class="input-text"
-              v-model.number="age"
-              placeholder="your age"
+              type="text"
+              v-model="name"
+              placeholder="your name"
             />
-            <small class="helper">{{ helperMsg }}</small>
-          </div>
-        </label>
-        <label class="label-elem">
-          <div>Where do you live</div>
-          <select class="input-select" name="place" v-model="location">
-            <option disabled value="0">Please Select One</option>
-            <option value="1">Hong Kong</option>
-            <option value="2">USA</option>
-            <option value="3">Australia</option>
-          </select>
-        </label>
-        <div class="flex flex-col label-elem">
-          <div class="radio-label">Package Type</div>
-          <div class="flex justify-between space-x-4">
-            <div class="radio-item">
+          </label>
+          <label :class="[err !== 0 ? 'error' : '']" class="label-elem">
+            <div>Age</div>
+            <div class="input-wrapper">
               <input
-                type="radio"
-                v-model="pack"
-                id="standardPack"
-                value="Standard"
+                type="text"
+                class="input-text"
+                v-model.number="age"
+                placeholder="your age"
               />
-              <label for="standardPack">Standard</label>
+              <small class="helper">{{ helperMsg }}</small>
             </div>
-            <div class="radio-item">
-              <input type="radio" v-model="pack" id="safePack" value="Safe" />
-              <label for="safePack"
-                >Safe (+{{ getSafeAdd(age, location) + " " + currency }})</label
-              >
-            </div>
-            <div class="radio-item">
-              <input
-                type="radio"
-                v-model="pack"
-                id="superSafePack"
-                value="Super Safe"
-              />
-              <label for="superSafePack"
-                >Super Safe (+{{
-                  getSSafeAdd(age, location) + " " + currency
-                }})</label
-              >
+          </label>
+          <label class="label-elem">
+            <div>Where do you live</div>
+            <select class="input-select" name="place" v-model="location">
+              <option disabled value="0">Please Select One</option>
+              <option value="1">Hong Kong</option>
+              <option value="2">USA</option>
+              <option value="3">Australia</option>
+            </select>
+          </label>
+          <div class="flex flex-col label-elem">
+            <div class="radio-label">Package Type</div>
+            <div class="flex justify-between space-x-4">
+              <div class="radio-item">
+                <input
+                  type="radio"
+                  v-model="pack"
+                  id="standardPack"
+                  value="Standard"
+                />
+                <label for="standardPack">Standard</label>
+              </div>
+              <div class="radio-item">
+                <input type="radio" v-model="pack" id="safePack" value="Safe" />
+                <label for="safePack"
+                  >Safe (+{{
+                    getSafeAdd(age, location) + " " + currency
+                  }})</label
+                >
+              </div>
+              <div class="radio-item">
+                <input
+                  type="radio"
+                  v-model="pack"
+                  id="superSafePack"
+                  value="Super Safe"
+                />
+                <label for="superSafePack"
+                  >Super Safe (+{{
+                    getSSafeAdd(age, location) + " " + currency
+                  }})</label
+                >
+              </div>
             </div>
           </div>
-        </div>
-        <div class="premium-wrapper">
-          <div>Your Premium is</div>
-          <div class="premium-score">
-            {{ getPricing(age, location, pack) + " " + getCurrency(location) }}
+          <div class="premium-wrapper">
+            <div>Your Premium is</div>
+            <div class="premium-score">
+              {{
+                getPricing(age, location, pack) + " " + getCurrency(location)
+              }}
+            </div>
           </div>
-        </div>
-      </form>
-    </div>
+        </form>
+      </div>
 
-    <nav class="navigations">
-      <router-link to="/">Back</router-link>
-      <router-link to="/result"  class="primary">Proceed</router-link>
-    </nav>
+      <nav class="navigations">
+        <router-link to="/">Back</router-link>
+        <router-link to="/result" class="primary">Proceed</router-link>
+      </nav>
+    </section>
   </main>
 </template>
 
@@ -169,7 +180,8 @@ label div {
 }
 
 .premium-wrapper {
-  @apply flex flex-col items-center w-full py-4 px-8 rounded-2xl text-white bg-indigo-500;
+  @apply flex flex-col items-center w-full py-4 px-8 rounded-2xl text-white;
+  background: #1D479B;
 }
 
 .premium-score {

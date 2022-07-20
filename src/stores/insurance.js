@@ -9,11 +9,10 @@ export const useInsuranceStore = defineStore({
     pack: "Standart",
     premium: 0,
     currency: "HKD",
-    // addSafe: 0,
-    addSuper: 0,
+    safeAdd: 0,
+    supSafeAdd: 0,
   }),
   getters: {
-    addSafe: (state) => state.age * state.location * 50,
   },
   actions: {
     getPricing(age, location, packType) {
