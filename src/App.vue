@@ -17,7 +17,7 @@ import { RouterLink, RouterView } from "vue-router";
 }
 
 main {
-  @apply flex space-x-1 border overflow-hidden rounded-xl h-full w-full max-w-screen-xl sm:max-h-[700px] shadow-lg;
+  @apply flex space-x-1 border overflow-hidden my-auto rounded-xl h-full w-full max-w-screen-xl sm:max-h-[700px] shadow-lg;
 }
 
 section.left-section {
