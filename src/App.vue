@@ -40,7 +40,7 @@ section.left-section {
 }
 
 section.right-section {
-  @apply w-full py-4 px-8 w-full flex flex-col justify-start bg-transparent;
+  @apply w-full py-4 px-8 w-full flex flex-col justify-start bg-transparent overflow-y-auto;
   min-width: 50%;
 }
 
@@ -49,7 +49,7 @@ section.right-section h1.section-title {
 }
 
 nav.navigations {
-  @apply flex justify-end space-x-2 mt-auto;
+  @apply flex justify-end space-x-2 mt-auto mb-2;
 }
 
 nav.navigations a {

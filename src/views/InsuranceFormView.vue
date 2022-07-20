@@ -19,7 +19,7 @@ const { getCurrency, getPricing, getSSafeAdd, getSafeAdd } = ins;
     </section>
     <section class="right-section">
       <h1 class="section-title">Insurance Form</h1>
-      <div>
+      <div class="mb-2">
         <form>
           <label class="label-elem">
             <div>Name</div>

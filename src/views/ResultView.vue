@@ -24,7 +24,7 @@ const { resetData } = ins;
         <div class="my-4 space-y-4 text-xl text-center">
           <div>{{ pack }} Package</div>
 
-          <div>Mr. {{ name }}</div>
+          <div>Insurance for {{ name }}</div>
           <div>{{ age }} Years Old</div>
           <div>
             Live in
