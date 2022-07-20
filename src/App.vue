@@ -56,6 +56,11 @@ nav.navigations a {
   @apply px-6 py-2 rounded-lg font-medium border border-emerald-600 text-emerald-600 shadow-md bg-white;
 }
 
+nav.navigations a.disabled {
+  @apply px-6 py-2 rounded-lg font-medium border border-gray-400 text-gray-400 shadow-md bg-gray-300;
+  cursor: not-allowed;
+}
+
 nav.navigations a.big {
   @apply w-full text-center text-xl px-6 py-2 rounded-lg font-medium border border-emerald-600 text-emerald-600 shadow-md bg-white;
 }

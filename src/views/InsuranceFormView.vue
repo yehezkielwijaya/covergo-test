@@ -99,7 +99,10 @@ const { getCurrency, getPricing, getSSafeAdd, getSafeAdd } = ins;
 
       <nav class="navigations">
         <router-link to="/">Back</router-link>
-        <router-link to="/result" class="primary">Proceed</router-link>
+        <router-link v-if="notEmpty === true" to="/result" class="primary"
+          >Proceed</router-link
+        >
+        <router-link v-else to="#" class="disabled">Proceed</router-link>
       </nav>
     </section>
   </main>
@@ -110,10 +113,16 @@ export default {
   data() {
     return {
       helperMsg: "Input your age, maximum age is 100",
-      err: 0
+      err: 0,
+      notEmpty: false
     };
   },
   watch: {
+    // name(value) {
+    //   this.checkInput(value);
+    // },
+    name: 'checkInput',
+    location: 'checkInput',
     age(value) {
       this.age = value;
       this.checkAge(value);
@@ -127,6 +136,12 @@ export default {
       } else {
         this.helperMsg = "Input your age, maximum age is 100";
         this.err = 0;
+      }
+    },
+    checkInput(value) {
+      if (this.name !== "" && this.err === 0 && this.location !== 0) {
+        this.notEmpty = true;
+        console.log(this.notEmpty)
       }
     }
   }
