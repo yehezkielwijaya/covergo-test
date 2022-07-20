@@ -6,7 +6,7 @@ import { RouterLink, RouterView } from "vue-router";
   <div class="topmost">
     <RouterView />
     <footer>
-      <small>Created with by <a href="http://yehezkielwijaya.vercel.app" target="_blank" class="font-medium text-yellow-700">Yehezkiel Wijaya</a></small>
+      <small>Created by <a href="http://yehezkielwijaya.vercel.app" target="_blank" class="font-medium text-yellow-700">Yehezkiel Wijaya</a></small>
     </footer>
   </div>
 </template>
