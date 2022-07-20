@@ -20,9 +20,9 @@ const { getCurrency, getPricing, getSSafeAdd, getSafeAdd} = ins;
       <div>Premium: {{ premium + ' ' + currency }}</div>
     </div>
 
-    <nav class="space-x-2">
+    <nav class="navigations">
       <router-link to="/form">Back</router-link>
-      <router-link to="/">Finish</router-link>
+      <router-link to="/" class="primary">Finish</router-link>
     </nav>
   </main>
 </template>
