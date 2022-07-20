@@ -8,11 +8,11 @@ import { RouterLink, RouterView } from "vue-router";
 
 <style lang="postcss">
 #app {
-  @apply flex flex-col items-center p-4 h-screen w-screen;
+  @apply flex flex-col items-center justify-center p-4 h-screen w-screen;
 }
 
 main {
-  @apply flex space-x-1 border overflow-hidden rounded-xl h-full w-full max-w-screen-xl shadow-lg;
+  @apply flex space-x-1 border overflow-hidden rounded-xl h-full w-full max-w-screen-xl max-h-[700px] shadow-lg;
 }
 
 section.left-section {
