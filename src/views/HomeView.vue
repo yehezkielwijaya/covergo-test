@@ -20,7 +20,7 @@
       </div>
 
       <nav class="navigations">
-        <router-link to="/form" class="primary">Start</router-link>
+        <router-link to="/form" class="primary big">Start</router-link>
       </nav>
     </section>
   </main>
