@@ -6,7 +6,7 @@ export const useInsuranceStore = defineStore({
     name: "",
     age: 0,
     location: 0,
-    pack: "Standart",
+    pack: "Standard",
     premium: 0,
     currency: "HKD",
     safeAdd: 0,
