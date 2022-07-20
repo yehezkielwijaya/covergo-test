@@ -1,6 +1,6 @@
 # covergo-test
 
-This template should help get you started developing with Vue 3 in Vite.
+Interview Test from CoverGo
 
 ## Recommended IDE Setup
 
