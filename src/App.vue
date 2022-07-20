@@ -32,7 +32,7 @@ section.left-section {
 }
 
 .main-title {
-  @apply text-4xl font-semibold mb-2;
+  @apply text-4xl font-semibold mb-2 capitalize;
 }
 
 .main-subtitle {
